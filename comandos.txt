@@ -6,7 +6,7 @@ docker run -d --name datadog-agent \
           -v /proc/:/host/proc/:ro \
           -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro \
           -v /var/run/datadog/:/var/run/datadog/ \
-          -e DD_API_KEY=d537121a430be139f019dfdee598df5b \
+          -e DD_API_KEY= \
           -e DD_APM_ENABLED=true \
           -e DD_SITE="us5.datadoghq.com" \
           -e DD_APM_NON_LOCAL_TRAFFIC=true \
@@ -20,8 +20,6 @@ do
   curl -s -k 'GET' -H 'header info' -b 'ff' 'http://localhost/sharks';
     curl -s -k 'GET' -H 'header info' -b 'ff' 'http://localhost/fiap';
 done
-
-d537121a430be139f019dfdee598df5b
 
 docker run -d -p 80:80 --name shark-dd-trace-sh shark-dd-trace-sh
 
